@@ -1,63 +1,70 @@
 
 Description:
 
-Operational Analytics is a crucial process that involves analyzing a company's end-to-end operations. This analysis helps identify areas for improvement within the company. As a Data Analyst, you'll work closely with various teams, such as operations, support, and marketing, helping them derive valuable insights from the data they collect.
+Problem Statement: The dataset provided is related to IMDB Movies. A potential problem to investigate could be: "What factors influence the success of a movie on IMDB?" Here, success can be defined by high IMDB ratings. The impact of this problem is significant for movie producers, directors, and investors who want to understand what makes a movie successful to make informed decisions in their future projects.
 
-One of the key aspects of Operational Analytics is investigating metric spikes. This involves understanding and explaining sudden changes in key metrics, such as a dip in daily user engagement or a drop in sales. As a Data Analyst, you'll need to answer these questions daily, making it crucial to understand how to investigate these metric spikes.
+Data Cleaning: This step involves preprocessing the data to make it suitable for analysis. It includes handling missing values, removing duplicates, converting data types if necessary, and possibly feature engineering.
 
-In this project, you'll take on the role of a Lead Data Analyst at a company like Microsoft. You'll be provided with various datasets and tables, and your task will be to derive insights from this data to answer questions posed by different departments within the company. Your goal is to use your advanced SQL skills to analyze the data and provide valuable insights that can help improve the company's operations and understand sudden changes in key metrics.
+Data Analysis: Here, you'll explore the data to understand the relationships between different variables. You might look at the correlation between movie ratings and other factors like genre, director, budget, etc. You might also want to consider the year of release, the actors involved, and other relevant factors.
 
-Case Study 1: Job Data Analysis
+Five 'Whys' Approach: This technique will help you dig deeper into the problem. For instance, if you find that movies with higher budgets tend to have higher ratings, you can ask "Why?" repeatedly to uncover the root cause. Here's an example:
 
-You will be working with a table named job_data with the following columns:
+    Q: "Why do movies with higher budgets tend to have higher ratings?"
 
-    job_id: Unique identifier of jobs
-    actor_id: Unique identifier of actor
-    event: The type of event (decision/skip/transfer).
-    language: The Language of the content
-    time_spent: Time spent to review the job in seconds.
-    org: The Organization of the actor
-    ds: The date in the format yyyy/mm/dd (stored as text).
+    A: They can afford better production quality.
 
-Tasks:
+    Q: "Why does better production quality lead to higher ratings?"
 
-    Jobs Reviewed Over Time:
-        Objective: Calculate the number of jobs reviewed per hour for each day in November 2020.
-        Your Task: Write an SQL query to calculate the number of jobs reviewed per hour for each day in November 2020.
-    Throughput Analysis:
-        Objective: Calculate the 7-day rolling average of throughput (number of events per second).
-        Your Task: Write an SQL query to calculate the 7-day rolling average of throughput. Additionally, explain whether you prefer using the daily metric or the 7-day rolling average for throughput, and why.
-    Language Share Analysis:
-        Objective: Calculate the percentage share of each language in the last 30 days.
-        Your Task: Write an SQL query to calculate the percentage share of each language over the last 30 days.
-    Duplicate Rows Detection:
-        Objective: Identify duplicate rows in the data.
-        Your Task: Write an SQL query to display duplicate rows from the job_data table.
+    A: It enhances the viewer's experience.
 
-Case Study 2: Investigating Metric Spike
+    Q: "Why does an enhanced viewer experience lead to higher ratings?"
 
-You will be working with three tables:
+    A: Viewers are more likely to rate a movie highly if they enjoyed watching it.
 
-    users: Contains one row per user, with descriptive information about that user’s account.
-    events: Contains one row per event, where an event is an action that a user has taken (e.g., login, messaging, search).
-    email_events: Contains events specific to the sending of emails.
+    Q: "Why are viewers more likely to rate a movie highly if they enjoyed watching it?"
 
-Tasks:
+    A: Positive experiences lead to positive reviews.
 
-    Weekly User Engagement:
-        Objective: Measure the activeness of users on a weekly basis.
-        Your Task: Write an SQL query to calculate the weekly user engagement.
-    User Growth Analysis:
-        Objective: Analyze the growth of users over time for a product.
-        Your Task: Write an SQL query to calculate the user growth for the product.
-    Weekly Retention Analysis:
-        Objective: Analyze the retention of users on a weekly basis after signing up for a product.
-        Your Task: Write an SQL query to calculate the weekly retention of users based on their sign-up cohort.
-    Weekly Engagement Per Device:
-        Objective: Measure the activeness of users on a weekly basis per device.
-        Your Task: Write an SQL query to calculate the weekly engagement per device.
-    Email Engagement Analysis:
-        Objective: Analyze how users are engaging with the email service.
-        Your Task: Write an SQL query to calculate the email engagement metrics.
+    Q: "Why do positive reviews matter?"
 
-Please note that for each task, you should also provide insights and interpretations of the results obtained from your queries. 
+    A: They influence other viewers' decisions to watch the movie, increasing its popularity and success.
+
+Report and Data Story: After your analysis, you'll create a report that tells a story with your data. This should include your initial problem, your findings, and the insights you've gained. Use visualizations to help tell your story and make your findings more understandable.
+
+Remember, as a data analyst, your goal is not just to answer questions but to provide insights that can drive decision-making. Your analysis should aim to provide actionable insights that can help stakeholders make informed decisions.
+
+Data Analytics Tasks:
+
+You are required to provide a detailed report for the below data record mentioning the answers of the questions that follows:
+
+A. Movie Genre Analysis: Analyze the distribution of movie genres and their impact on the IMDB score.
+
+    Task: Determine the most common genres of movies in the dataset. Then, for each genre, calculate descriptive statistics (mean, median, mode, range, variance, standard deviation) of the IMDB scores.
+
+    Hint: Use Excel's COUNTIF function to count the number of movies for each genre. You might need to manipulate the 'genres' column to separate multiple genres for a single movie. Use Excel's functions like AVERAGE, MEDIAN, MODE, MAX, MIN, VAR, and STDEV to calculate descriptive statistics. Compare the statistics to understand the impact of genre on movie ratings.
+
+B. Movie Duration Analysis: Analyze the distribution of movie durations and its impact on the IMDB score.
+
+    Task: Analyze the distribution of movie durations and identify the relationship between movie duration and IMDB score.
+
+    Hint: Calculate descriptive statistics such as mean, median, and standard deviation for movie durations. Use Excel's functions like AVERAGE, MEDIAN, and STDEV. Create a scatter plot to visualize the relationship between movie duration and IMDB score. Add a trendline to assess the direction and strength of the relationship.
+
+C. Language Analysis: Situation: Examine the distribution of movies based on their language.
+
+    Task: Determine the most common languages used in movies and analyze their impact on the IMDB score using descriptive statistics.
+
+    Hint: Use Excel's COUNTIF function to count the number of movies for each language. Calculate the mean, median, and standard deviation of the IMDB scores for each language. Compare the statistics to understand the impact of language on movie ratings.
+
+D. Director Analysis: Influence of directors on movie ratings.
+
+    Task: Identify the top directors based on their average IMDB score and analyze their contribution to the success of movies using percentile calculations.
+
+    Hint: Calculate the average IMDB score for each director. Use Excel's PERCENTILE function to identify the directors with the highest scores. Compare the scores of these directors to the overall distribution of scores.
+
+E. Budget Analysis: Explore the relationship between movie budgets and their financial success.
+
+    Task: Analyze the correlation between movie budgets and gross earnings, and identify the movies with the highest profit margin.
+
+    Hint: Calculate the correlation coefficient between movie budgets and gross earnings using Excel's CORREL function. Calculate the profit margin (gross earnings - budget) for each movie and identify the movies with the highest profit margin using Excel's MAX function.
+
+Remember, these tasks are designed to progressively explore different aspects of the dataset and uncover meaningful insights. Each task builds upon the previous one to provide a comprehensive analysis of the IMDB movie data.
